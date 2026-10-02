@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Airline;
+use App\Models\Flight;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -9,17 +11,19 @@ use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
     use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
+    /*
+     * Run the database seeds.
      */
+
     public function run(): void
     {
-        // User::factory(10)->create();
-
+        User::factory(10)->create();
+        Airline::factory(10)->create();
+        Flight::factory(10)->create();
+        /*
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
-        ]);
+        ]);*/
     }
 }
